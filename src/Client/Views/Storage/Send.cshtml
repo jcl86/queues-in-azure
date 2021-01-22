@@ -1,0 +1,23 @@
+﻿@model MessageModel
+
+<div class="text-center">
+    <h1 class="display-4">Send message</h1>
+    <form asp-action="Send">
+        <div class="row">
+            <label>Content</label>
+            <input asp-for="Content" class="form-control" />
+
+        </div>
+        <button class="btn btn-primary px-4 py-2 float-right" name="button" value="Send">
+            Send
+        </button>
+    </form>
+
+    <p class="small">
+        <strong>@ViewBag.Message</strong>
+    </p>
+
+    <a asp-action="Receive" class="btn btn-secondary px-4 py-2 m-4" name="button">
+        Go to receive
+    </a>
+</div>

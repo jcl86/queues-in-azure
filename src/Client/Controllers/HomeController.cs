@@ -1,35 +1,22 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Client.Models;
-using System.Threading.Tasks;
 using Client.Services;
 
 namespace Client.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly QueueSender queueSender;
+        private readonly ServiceBusQueueSender queueSender;
 
-        public HomeController(QueueSender queueSender)
+        public HomeController(ServiceBusQueueSender queueSender)
         {
             this.queueSender = queueSender;
         }
 
 
-        public IActionResult Home ()
+        public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult SendMessage()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> SendMessage(MessageModel message)
-        {
-            await queueSender.Send(message.Content);
-            ViewBag.Message = "Message was sent correctly";
             return View();
         }
 

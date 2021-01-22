@@ -24,7 +24,10 @@ namespace Client
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<QueueSender>();
+            services.AddScoped<ServiceBusQueueSender>();
+            services.AddScoped<StorageQueueRetriever>();
+            services.AddScoped<StorageQueueReceiver>();
+            services.AddScoped<StorageQueueSender>();
 
             services.AddControllersWithViews();
         }

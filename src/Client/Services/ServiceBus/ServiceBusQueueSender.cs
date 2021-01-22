@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Client.Services
 {
-    public class QueueSender
+    public class ServiceBusQueueSender
     {
         private readonly string connection;
 
-        public QueueSender(IConfiguration configuration)
+        public ServiceBusQueueSender(IConfiguration configuration)
         {
             connection = configuration.GetSection("QueueConnection").Value;
         }
@@ -27,5 +27,4 @@ namespace Client.Services
         }
     }
 
-  
 }
