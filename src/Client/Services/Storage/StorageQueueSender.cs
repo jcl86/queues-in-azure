@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Client.Models;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace Client.Services
 {
@@ -11,11 +13,11 @@ namespace Client.Services
             this.queueRetriever = queueRetriever;
         }
 
-        public async Task Send(string messageBody)
+        public async Task Send(MessageModel message)
         {
             var queue = await queueRetriever.GetQueue();
-
-            await queue.SendMessageAsync(messageBody);
+            var json = JsonConvert.SerializeObject(message);
+            await queue.SendMessageAsync(json);
         }
     }    
 

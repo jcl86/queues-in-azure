@@ -24,7 +24,7 @@ namespace Client.Controllers
         [HttpPost]
         public async Task<IActionResult> Send(MessageModel model)
         {
-            await sender.Send(model.Content);
+            await sender.Send(model);
             ViewBag.Message = "Message was sent correctly";
             return View();
         }
@@ -37,15 +37,15 @@ namespace Client.Controllers
         [HttpPost]
         public async Task<IActionResult> Receive(MessageListModel model)
         {
-            string message = await receiver.Receive();
-            if (!string.IsNullOrWhiteSpace(message))
+            var message = await receiver.Receive();
+            if (message != null && !string.IsNullOrWhiteSpace(message.Content))
             {
                 if (model.Messages is null)
                 {
                     model.Messages = new System.Collections.Generic.List<string>();
                 }
-                model.Messages.Add(message);
-                ViewBag.Message = "A new message was received";
+                model.Messages.Add(message.Content);
+                ViewBag.Message = $"A new message was received: {message.Content}";
             }
             else ViewBag.Message = "There are no messages in the queue";
 
