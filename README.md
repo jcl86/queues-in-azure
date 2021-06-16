@@ -1,4 +1,4 @@
-# Azure Storage
+# Azure examples
 
 This repository contains examples for working with Azure Queues, Azure Service Bus and Azure tables
 
