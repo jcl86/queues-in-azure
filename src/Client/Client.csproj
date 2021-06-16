@@ -7,8 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Queues" Version="12.6.0" />
+    <PackageReference Include="Bogus" Version="33.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.11" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.1.1" />
+    <PackageReference Include="Azure.Data.Tables" Version="12.0.1" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://gitlab.com/-/snippets/2062623/raw/master/foundryvtt_template_schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

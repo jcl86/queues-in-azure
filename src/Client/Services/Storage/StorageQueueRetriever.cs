@@ -24,5 +24,4 @@ namespace Client.Services
             return client;
         }
     }
-
 }

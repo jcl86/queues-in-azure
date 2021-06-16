@@ -1,0 +1,35 @@
+﻿@model CreateProductModel
+
+<div class="text-center">
+    <h1 class="display-4">Create new product</h1>
+    <form asp-action="CreateProduct">
+        <div class="row">
+            <label>Name</label>
+            <input asp-for="Name" class="form-control" />
+
+        </div>
+
+        <div class="row">
+            <label>Price</label>
+            <input asp-for="Price" class="form-control" />
+
+        </div>
+
+        <div class="row">
+            <label>Quantity</label>
+            <input asp-for="Quantity" class="form-control" />
+
+        </div>
+        <button class="btn btn-primary px-4 py-2 float-right" name="button" value="Send">
+            Create product
+        </button>
+    </form>
+
+    <p class="small">
+        <strong>@ViewBag.Message</strong>
+    </p>
+
+    <a asp-action="Index" class="btn btn-secondary px-4 py-2 m-4" name="button">
+        Go back to List
+    </a>
+</div>

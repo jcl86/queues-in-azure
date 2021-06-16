@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CategoryModel>
+
+<div class="text-center">
+    <h1 class="display-4">List of categories</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    Name
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        <a asp-action="UpdateCategory" asp-route-id="@item.Id" class="btn btn-primary">
+                            Edit
+                        </a>
+
+                        <a asp-action="DeleteCategory" asp-route-id="@item.Id" class="btn btn-danger">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p class="small">
+        <strong>@ViewBag.Message</strong>
+    </p>
+
+    <a asp-action="CreateCategory" class="btn btn-secondary px-4 py-2 m-4">
+        Add new category
+    </a>
+
+    <a asp-action="CategoryIndex" class="btn btn-secondary px-4 py-2 m-4">
+        Go back
+    </a>
+</div>

@@ -1,0 +1,24 @@
+﻿@model ProductModel
+
+<div class="container">
+    <div class="lead m-4 text-center">
+        <h1 class="text-danger">  Se va a eliminar <strong>@Model.Name</strong></h1>
+
+        <span>¿Seguro que quiere eliminarlo?</span>
+
+    </div>
+    <div class="btn-toolbar my-4" role="toolbar" aria-label="Barra de herramientas">
+        <div class="btn-group" role="group">
+            <a class="btn btn-secondary text-uppercase mr-2" asp-action="CategoryIndex">
+                <span class="oi oi-caret-left mr-2"></span> Volver
+            </a>
+            <form asp-action="DeleteProductConfirmed">
+                <input type="hidden" asp-for="Id" />
+                <button class="btn btn-outline-danger text-uppercase">
+                    Eliminar
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>

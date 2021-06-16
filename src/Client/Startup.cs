@@ -28,6 +28,7 @@ namespace Client
             services.AddScoped<StorageQueueRetriever>();
             services.AddScoped<StorageQueueReceiver>();
             services.AddScoped<StorageQueueSender>();
+            services.AddScoped<StorageTableService>();
 
             services.AddControllersWithViews();
         }
